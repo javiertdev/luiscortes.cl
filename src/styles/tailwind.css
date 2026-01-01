@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #0a0e27;
+  --color-bg-secondary: #131829;
+  --color-glass-bg: rgb(255 255 255 / 0.05);
+  --color-glass-border: rgb(255 255 255 / 0.1);
+  --color-text-primary: #e6e8f0;
+  --color-text-secondary: #9ca3af;
+  --color-accent-primary: #6366f1;
+  --color-accent-glow: #818cf8;
+}
+
+@layer base {
+  * {
+    @apply m-0 p-0 box-border;
+  }
+  
+  body {
+    @apply overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: var(--color-glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--color-glass-border);
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px rgb(0 0 0 / 0.37);
+    transition: all 0.3s ease;
+  }
+  
+  .glass-card:hover {
+    border-color: var(--color-accent-glow);
+    box-shadow: 
+      0 8px 32px rgb(0 0 0 / 0.37),
+      0 0 20px rgb(99 102 241 / 0.3);
+    transform: translateY(-4px);
+  }
+}

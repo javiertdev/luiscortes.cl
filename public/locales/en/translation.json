@@ -1,0 +1,9 @@
+{
+  "welcome": {
+    "title": "To get started, open the <code><pre>src/pages</pre></code> directory in your project.",
+    "docs": "Read our docs",
+    "discord": "Join our Discord",
+    "news_title": "What's New in Astro 5.0?",
+    "news_desc": "From content layers to server islands, click to learn more about the new features and improvements in Astro 5.0"
+  }
+}

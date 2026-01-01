@@ -1,0 +1,9 @@
+{
+  "welcome": {
+    "title": "Para comenzar, abre el directorio <code><pre>src/pages</pre></code> en tu proyecto.",
+    "docs": "Lee nuestra documentación",
+    "discord": "Únete a nuestro Discord",
+    "news_title": "¿Qué hay de nuevo en Astro 5.0?",
+    "news_desc": "Desde capas de contenido hasta islas de servidor, haz clic para aprender más sobre las nuevas funciones y mejoras en Astro 5.0"
+  }
+}
