@@ -17,7 +17,7 @@ const locale = i18n.language as keyof typeof content;
       </div>
       <div class="backdrop-blur-sm bg-white/5 rounded-2xl p-8 border border-white/10 transition-all duration-300 hover:bg-white/10 hover:shadow-lg hover:shadow-[#22D3EE]/50">
         <h2 class="text-3xl font-bold mb-8 text-center text-[#E6E8F0]">{t("about.title")}</h2>
-        <div class="text-lg text-[#92abcf] text-center" set:html={new jtYxtus().parse(content[locale].aboutme.description)}></div>
+        <div class="text-lg text-[#92abcf] text-justify" set:html={new jtYxtus().parse(content[locale].aboutme.description)}></div>
       </div>
     </div>
   </div>

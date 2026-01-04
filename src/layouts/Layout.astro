@@ -2,6 +2,7 @@
 import { HeadHrefLangs } from "astro-i18next/components";
 import i18next, { t, changeLanguage } from "i18next";
 import { content } from '../_data/content';
+import jtYxtus from "@javiert.dev/yxtus";
 import '../styles/tailwind.css';
 import '../styles/global.css';
 
@@ -126,9 +127,7 @@ changeLanguage(currentLocale);
 
   <!-- Availability Toast -->
   {showToast && (
-    <a href="#contact" id="availability-toast" class="fixed top-6 left-1/2 transform -translate-x-1/2 z-40 bg-green-500 text-white px-6 py-3 text-lg text-center rounded-lg shadow-lg hover:bg-green-600 transition-colors cursor-pointer animate-slide-in">
-      {t("about.availableImmediately")}
-    </a>
+    <a href="#contact" id="availability-toast" class="fixed top-6 left-1/2 transform -translate-x-1/2 z-40 bg-green-500 text-white px-6 py-3 text-lg text-center rounded-lg shadow-lg hover:bg-green-600 transition-colors cursor-pointer animate-slide-in" set:html={new jtYxtus().parse(t("about.availableImmediately"))}></a>
   )}
 
   <slot />
