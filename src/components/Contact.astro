@@ -1,0 +1,172 @@
+---
+import i18n, { t } from "i18next";
+import { content } from "../_data/content";
+import Input from "./Input.astro";
+import Textarea from "./Textarea.astro";
+import Tooltip from "./Tooltip.astro";
+import Alert from "./Alert.astro";
+
+export interface Props {
+  enhanced?: boolean;
+}
+
+const endpoint = 'https://api.luiscortes.cl/v1/contact';
+// const endpoint = 'http://localhost:8000/v1/contact';
+
+const { enhanced = false } = Astro.props;
+const locale = i18n.language as keyof typeof content;
+
+const successTitle = t('contact.alerts.success.title');
+const successMessage = t('contact.alerts.success.message');
+const errorTitle = t('contact.alerts.error.title');
+const errorMessage = t('contact.alerts.error.message');
+const acceptText = t('contact.alerts.accept');
+---
+<section id="contact" class="py-20 bg-[#0A0E27] text-[#E6E8F0] relative overflow-hidden">
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute top-0 left-0 w-full h-full" style="background-image: conic-gradient(from 0deg at 50% 50%, #6366F1, #22D3EE, #6366F1); mask: radial-gradient(circle at center, transparent 40%, black 70%);"></div>
+  </div>
+  <div class="container mx-auto px-4 relative z-10">
+    <h2 class="text-3xl font-bold mb-8 text-center text-[#E6E8F0]">{t('contact.title')}</h2>
+    <div class="max-w-xl mx-auto">
+      <div class="backdrop-blur-sm bg-white/5 rounded-2xl p-6 border border-white/10 flex flex-col justify-center">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-2xl font-semibold text-[#E6E8F0] leading-10">{t('contact.sendMessage')}</h3>
+          <button id="back-btn" class="hidden cursor-pointer px-4 py-2 bg-gray-600 hover:bg-gray-500 text-white rounded-lg transition-colors duration-300">{t('contact.back')}</button>
+        </div>
+        <!-- Selection buttons -->
+        <div id="button-container" class="grid grid-cols-2 gap-4 items-center">
+          <button id="individual-btn" class="cursor-pointer aspect-square w-full bg-[#6366F1]/20 hover:bg-[#6366F1]/30 border border-[#6366F1]/50 rounded-2xl text-[#E6E8F0] font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#6366F1]/50 flex items-center justify-center">
+            {t('contact.individual')}
+          </button>
+          <button id="company-btn" class="cursor-pointer aspect-square w-full bg-[#22D3EE]/20 hover:bg-[#22D3EE]/30 border border-[#22D3EE]/50 rounded-2xl text-[#E6E8F0] font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#22D3EE]/50 flex items-center justify-center">
+            {t('contact.company')}
+          </button>
+        </div>
+        <!-- Individual form -->
+        <div id="individual-form" class="hidden">
+          <form id="individual-form-element" class="flex flex-col">
+            <Input label={t('contact.nameSurnames')} type="text" id="ind-name" name="name" required maxLength={100} showNearLimitCounter={true} />
+            <Input label={t('contact.email')} type="email" id="ind-email" name="email" required maxLength={254} showNearLimitCounter={true} />
+            <Input label={t('contact.contactNumber')} type="tel" id="ind-phone" name="phone" required maxLength={20} showNearLimitCounter={true} />
+            <Input label={t('contact.subject')} type="text" id="ind-subject" name="subject" required maxLength={200} showNearLimitCounter={true} tooltip={t('contact.subjectTooltip')} />
+            <Textarea label={t('contact.message')} id="ind-message" name="message" rows={4} maxLength={1000} required tooltip={t('contact.messageTooltip')} variant="individual" showNearLimitCounter={true} />
+            <button type="submit" class="cursor-pointer w-full bg-[#6366F1] hover:bg-[#6366F1]/80 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">{t('contact.send')}</button>
+          </form>
+        </div>
+        <!-- Company form -->
+        <div id="company-form" class="hidden">
+          <form id="company-form-element" class="flex flex-col">
+            <Input label={t('contact.companyName')} type="text" id="comp-name" name="companyName" variant="company" required maxLength={100} showNearLimitCounter={true}  />
+            <div class="flex justify-between gap-2">
+              <div class="flex-1">
+              <Input label={t('contact.companyWebsite')} type="url" id="comp-website" name="companyWebsite" variant="company" required maxLength={200} showNearLimitCounter={true} />
+              </div>
+              <button type="button" id="no-website-btn" class="cursor-pointer px-3 py-2 bg-[#22D3EE]/20 hover:bg-[#22D3EE]/30 border border-[#22D3EE]/50 rounded-lg text-[#E6E8F0] text-sm transition-colors duration-300 h-10.5 mt-7 mb-4">{t('contact.noWebsite')}</button>
+            </div>
+            <Input label={t('contact.yourNameSurnames')} type="text" id="comp-your-name" name="yourName" variant="company" required maxLength={100} showNearLimitCounter={true} />
+            <Input label={t('contact.yourEmail')} type="email" id="comp-your-email" name="yourEmail" variant="company" required maxLength={254} showNearLimitCounter={true} />
+            <Input label={t('contact.yourContactNumber')} type="tel" id="comp-your-phone" name="yourPhone" variant="company" required maxLength={20} showNearLimitCounter={true} />
+            <Input label={t('contact.subject')} type="text" id="comp-subject" name="subject" variant="company" required maxLength={200} showNearLimitCounter={true} tooltip={t('contact.subjectTooltip')} />
+            <Textarea label={t('contact.message')} id="comp-message" name="message" rows={4} maxLength={1000} required tooltip={t('contact.messageTooltip')} variant="company" showNearLimitCounter={true} />
+            <button type="submit" class="cursor-pointer w-full bg-[#22D3EE] hover:bg-[#22D3EE]/80 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">{t('contact.send')}</button>
+          </form>
+        </div>
+        <script define:vars={{ successTitle, successMessage, errorTitle, errorMessage, acceptText, endpoint }}>
+          const buttonContainer = document.getElementById('button-container');
+          const backBtn = document.getElementById('back-btn');
+          const individualBtn = document.getElementById('individual-btn');
+          const companyBtn = document.getElementById('company-btn');
+          const individualForm = document.getElementById('individual-form');
+          const companyForm = document.getElementById('company-form');
+          const noWebsiteBtn = document.getElementById('no-website-btn');
+          const compWebsiteInput = document.getElementById('comp-website');
+
+          individualBtn.addEventListener('click', () => {
+            buttonContainer.classList.add('hidden');
+            backBtn.classList.remove('hidden');
+            individualForm.classList.remove('hidden');
+            companyForm.classList.add('hidden');
+            individualBtn.classList.add('ring-2', 'ring-[#6366F1]');
+            individualBtn.style.transform = 'translateY(-8px)';
+            companyBtn.classList.remove('ring-2', 'ring-[#22D3EE]');
+            companyBtn.style.transform = '';
+          });
+
+          companyBtn.addEventListener('click', () => {
+            buttonContainer.classList.add('hidden');
+            backBtn.classList.remove('hidden');
+            companyForm.classList.remove('hidden');
+            individualForm.classList.add('hidden');
+            companyBtn.classList.add('ring-2', 'ring-[#22D3EE]');
+            companyBtn.style.transform = 'translateY(-8px)';
+            individualBtn.classList.remove('ring-2', 'ring-[#6366F1]');
+            individualBtn.style.transform = '';
+          });
+
+          backBtn.addEventListener('click', () => {
+            backBtn.classList.add('hidden');
+            buttonContainer.classList.remove('hidden');
+            individualForm.classList.add('hidden');
+            companyForm.classList.add('hidden');
+            individualBtn.classList.remove('ring-2', 'ring-[#6366F1]');
+            individualBtn.style.transform = '';
+            companyBtn.classList.remove('ring-2', 'ring-[#22D3EE]');
+            companyBtn.style.transform = '';
+          });
+
+          noWebsiteBtn.addEventListener('click', () => {
+            compWebsiteInput.value = noWebsiteBtn.textContent.trim();
+          });
+
+          // Form submission handlers
+          const individualFormElement = document.getElementById('individual-form-element');
+          const companyFormElement = document.getElementById('company-form-element');
+
+          individualFormElement.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(individualFormElement);
+            const data = Object.fromEntries(formData);
+            try {
+              const response = await fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+              });
+              if (response.ok) {
+                window.showAlert({ type: 'success', title: successTitle, message: successMessage, buttons: [{ id: 'accept', text: acceptText, type: 'primary' }], resolve: () => {}, reject: () => {} });
+                individualFormElement.reset();
+              } else {
+                window.showAlert({ type: 'error', title: errorTitle, message: errorMessage, buttons: [{ id: 'accept', text: acceptText, type: 'primary' }], resolve: () => {}, reject: () => {} });
+              }
+            } catch (error) {
+              window.showAlert({ type: 'error', title: errorTitle, message: 'Error: ' + error.message, buttons: [{ id: 'accept', text: acceptText, type: 'primary' }], resolve: () => {}, reject: () => {} });
+            }
+          });
+
+          companyFormElement.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(companyFormElement);
+            const data = Object.fromEntries(formData);
+            try {
+              const response = await fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+              });
+              if (response.ok) {
+                window.showAlert({ type: 'success', title: successTitle, message: successMessage, buttons: [{ id: 'accept', text: acceptText, type: 'primary' }], resolve: () => {}, reject: () => {} });
+                companyFormElement.reset();
+              } else {
+                window.showAlert({ type: 'error', title: errorTitle, message: errorMessage, buttons: [{ id: 'accept', text: acceptText, type: 'primary' }], resolve: () => {}, reject: () => {} });
+              }
+            } catch (error) {
+              window.showAlert({ type: 'error', title: errorTitle, message: 'Error: ' + error.message, buttons: [{ id: 'accept', text: acceptText, type: 'primary' }], resolve: () => {}, reject: () => {} });
+            }
+          });
+        </script>
+      </div>
+    </div>
+  </div>
+  <Alert />
+</section>

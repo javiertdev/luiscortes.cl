@@ -1,0 +1,145 @@
+---
+import Tooltip from './Tooltip.astro';
+
+export interface Props {
+  label?: string;
+  type?: 'text' | 'email' | 'tel' | 'url' | 'password';
+  id?: string;
+  name?: string;
+  placeholder?: string;
+  required?: boolean;
+  value?: string;
+  disabled?: boolean;
+  maxLength?: number;
+  showCounter?: boolean;
+  showNearLimitCounter?: boolean;
+  tooltip?: string;
+  icon?: string;
+  hints?: string[];
+  variant?: 'individual' | 'company';
+  class?: string;
+}
+
+const {
+  label,
+  type = 'text',
+  id,
+  name,
+  placeholder,
+  required = false,
+  value = '',
+  disabled = false,
+  maxLength,
+  showCounter = false,
+  showNearLimitCounter = true,
+  tooltip,
+  icon,
+  hints = [],
+  variant = 'individual',
+  class: className = ''
+} = Astro.props;
+
+const focusRingClass = variant === 'company' ? 'focus:ring-[#22D3EE]' : 'focus:ring-[#6366F1]';
+
+const showCounterEffective = showCounter || (showNearLimitCounter && maxLength && (value.length / maxLength) >= 0.9);
+const counterText = maxLength ? `${value.length}/${maxLength}` : '';
+const counterClass = maxLength && (value.length / maxLength) > 0.9 ? 'text-red-500' : maxLength && (value.length / maxLength) > 0.85 ? 'text-orange-500' : 'text-gray-400';
+
+const primaryHint = hints.length > 0 ? hints[0] : null;
+---
+
+{label && (
+  <div class="flex justify-between items-center mb-1">
+    <label for={id} class="block text-md font-medium text-[#E6E8F0]">
+      {label}
+    </label>
+    {tooltip && (
+      <Tooltip text={tooltip} position="left">
+        <span class="cursor-help text-gray-400">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M11.95 18q.525 0 .888-.363t.362-.887-.362-.888-.888-.362-.887.363-.363.887.363.888.887.362m.05 4q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9 2 12t.788-3.9 2.137-3.175T8.1 2.788 12 2t3.9.788 3.175 2.137T21.213 8.1 22 12t-.788 3.9-2.137 3.175-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4 6.325 6.325 4 12t2.325 5.675T12 20m.1-12.3q.625 0 1.088.4t.462 1q0 .55-.337.975t-.763.8q-.575.5-1.012 1.1t-.438 1.35q0 .35.263.588t.612.237q.375 0 .638-.25t.337-.625q.1-.525.45-.937t.75-.788q.575-.55.988-1.2t.412-1.45q0-1.275-1.037-2.087T12.1 6q-.95 0-1.812.4T8.975 7.625q-.175.3-.112.638t.337.512q.35.2.725.125t.625-.425q.275-.375.688-.575t.862-.2"/></svg>
+        </span>
+      </Tooltip>
+    )}
+  </div>
+)}
+<div class={`relative ${icon ? 'has-icon' : ''}`}>
+  {icon && (
+    <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+      {icon === 'search' ? '🔍' : icon === 'user' ? '👤' : '📧'}
+    </span>
+  )}
+  <input
+    type={type || 'text'}
+    id={id}
+    name={name}
+    placeholder={placeholder}
+    value={value}
+    disabled={disabled}
+    maxlength={maxLength}
+    required={required}
+    data-maxlength={maxLength}
+    class={`w-full ${icon ? 'pl-10' : 'px-3'} py-2 bg-white/10 border border-white/20 rounded-lg text-[#E6E8F0] placeholder-[#64748B] focus:outline-none focus:ring-2 ${focusRingClass} ${className}`}
+  />
+</div>
+<div class="flex justify-between items-center mt-1">
+  <div class="flex-1">
+    {type === 'email' && (
+      <div id={`validation-${id}`} class="text-sm text-red-500" style="display: none;">
+        Invalid email address
+      </div>
+    )}
+    {primaryHint && (
+      <div class="text-sm text-gray-400">
+        {primaryHint}
+      </div>
+    )}
+  </div>
+  {maxLength && (
+    <div id={`counter-${id}`} class={`text-sm ${counterClass}`} style={`visibility: ${showCounterEffective ? 'visible' : 'hidden'}`}>
+      {counterText}
+    </div>
+  )}
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const inputs = document.querySelectorAll('input[data-maxlength]');
+    inputs.forEach((inputEl) => {
+      const input = inputEl as HTMLInputElement;
+      const id = input.id;
+      const counter = document.getElementById(`counter-${id}`);
+      const validationHint = document.getElementById(`validation-${id}`);
+      const isEmail = input.type === 'email';
+
+      const validateEmail = (email: string) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      };
+
+      const updateValidation = () => {
+        if (isEmail && validationHint) {
+          const isValid = !input.value || validateEmail(input.value);
+          validationHint.style.display = isValid ? 'none' : 'block';
+        }
+      };
+
+      if (counter) {
+        const max = parseInt(input.dataset.maxlength || '0');
+        const updateCounter = () => {
+          const length = input.value.length;
+          counter.textContent = `${length}/${max}`;
+          const percent = length / max;
+          const show = percent >= 0.9;
+          counter.style.visibility = show ? 'visible' : 'hidden';
+          counter.className = `text-sm ${percent > 0.9 ? 'text-red-500' : percent > 0.85 ? 'text-orange-500' : 'text-gray-400'}`;
+        };
+        input.addEventListener('input', updateCounter);
+        updateCounter(); // Initial update
+      }
+
+      if (isEmail) {
+        input.addEventListener('input', updateValidation);
+        updateValidation(); // Initial update
+      }
+    });
+  });
+</script>

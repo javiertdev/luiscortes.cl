@@ -2,6 +2,9 @@
 
 En este repositorio está todo el desarrollo detrás de la web [LuisCortes.cl](https://luiscortes.cl). El objetivo de este proyecto es disponer a los reclutadores un resumen de mis habilidades, experiencia laboral, proyectos en los que trabajo.
 
+> Si bien está desarrollé este proyecto pensado en mi perfil e información, puedes reutilizarlo para tu perfil, y modificarlo a tu gusto.
+> Es cosa de modificar el archivo `content.ts` con tu información.
+
 ## Stack Tecnológico
 
 <p align="center">
@@ -24,6 +27,9 @@ En este repositorio está todo el desarrollo detrás de la web [LuisCortes.cl](h
    <img src="https://skillicons.dev/icons?i=git" />
    <img src="https://skillicons.dev/icons?i=github" />
  </a>
+ <a href="https://npmjs.com/@javiert.dev/yxtus">
+   <img src="https://s6.imgcdn.dev/Yle5CL.png" width="48" height="48" />
+ </a>
 </p>
 
 ## Instrucciones para ejecutarlo en tu ambiente local
@@ -34,7 +40,7 @@ Recomiendo utilizar [Visual Studio Code](https://code.visualstudio.com/download)
 
 ### Paso 1
 
-Descarga o clona el proyecto desde [mi Github](https://github.com/javiertdev/luiscortes.cl).
+Descarga o clona el proyecto desde [mi GitHub](https://github.com/javiertdev/luiscortes.cl).
 
 ```bash
 git clone git@github.com:javiertdev/luiscortes.cl.git

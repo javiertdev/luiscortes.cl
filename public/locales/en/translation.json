@@ -1,9 +1,71 @@
 {
-  "welcome": {
-    "title": "To get started, open the <code><pre>src/pages</pre></code> directory in your project.",
-    "docs": "Read our docs",
-    "discord": "Join our Discord",
-    "news_title": "What's New in Astro 5.0?",
-    "news_desc": "From content layers to server islands, click to learn more about the new features and improvements in Astro 5.0"
-  }
+  "common": {
+    "home": "Go to home",
+    "rrss": {
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "youtube": "YouTube",
+      "instagram": "Instagram"
+    },
+    "repo": {
+      "github": "Check the code of this project on GitHub"
+    }
+  },
+  "hero": {
+    "downloadSummary": "Download Summary",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "About Me",
+    "availableImmediately": "Immediate Availability"
+  },
+  "skills": {
+    "title": "Technical Skills"
+  },
+  "experience": {
+    "title": "Work Experience"
+  },
+  "projects": {
+    "title": "Projects",
+    "seeMore": "See more projects on GitHub"
+  },
+  "contact": {
+   "title": "Contact",
+   "email": "Email",
+   "phone": "Phone",
+   "individual": "I am an individual",
+   "company": "I am a company",
+   "nameSurnames": "Name and surnames",
+   "contactNumber": "Contact number",
+   "subject": "Subject",
+   "message": "Message",
+   "companyName": "Company name",
+   "companyWebsite": "Company website",
+   "noWebsite": "We don't have one yet",
+   "yourNameSurnames": "Your name and surnames",
+   "yourEmail": "Your email",
+   "yourContactNumber": "Your contact number",
+   "send": "Send",
+   "back": "Back",
+   "sendMessage": "Send me a message",
+   "subjectTooltip": "Write a *clear and descriptive* subject",
+   "messageTooltip": "Write a *detailed message explaining your query*,\n:-- complement with links if available.",
+   "alerts": {
+     "success": {
+       "title": "Message sent",
+       "message": "Your message has been sent successfully."
+     },
+     "error": {
+       "title": "Error",
+       "message": "There was an error sending the message."
+     },
+     "accept": "Accept",
+     "errors": {
+       "REQUIRED_FIELD": "The field {field} is required",
+       "INVALID_EMAIL": "Invalid email format",
+       "INVALID_URL": "Invalid URL format",
+       "EMAIL_SEND_FAILED": "Failed to send email. Please try again."
+     }
+   }
+ }
 }

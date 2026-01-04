@@ -1,7 +1,14 @@
 ---
 import { changeLanguage } from "i18next";
-import Welcome from '../../components/Welcome.astro';
 import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import AboutMe from '../../components/AboutMe.astro';
+import Skills from '../../components/Skills.astro';
+import Experience from '../../components/Experience.astro';
+import Projects from '../../components/Projects.astro';
+import Contact from '../../components/Contact.astro';
+import Footer from '../../components/Footer.astro';
+import { content } from '../../_data/content';
 
 export async function getStaticPaths() {
   return [
@@ -13,10 +20,16 @@ export async function getStaticPaths() {
 const { locale } = Astro.params;
 changeLanguage(locale);
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const pageTitle = content[locale].aboutme.name + ' - ' + content[locale].aboutme.role;
+const pageDescription = content[locale].aboutme.name + ' - ' + content[locale].aboutme.role;
 ---
 
-<Layout title="Portfolio">
-	<Welcome />
+<Layout title={pageTitle} description={pageDescription}>
+	<Hero />
+	<AboutMe />
+	<Skills />
+	<Experience />
+	<Projects />
+	<Contact />
+	<Footer />
 </Layout>

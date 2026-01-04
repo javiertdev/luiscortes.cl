@@ -1,15 +1,44 @@
 ---
 import { HeadHrefLangs } from "astro-i18next/components";
 import i18next, { t, changeLanguage } from "i18next";
+import { content } from '../_data/content';
 import '../styles/tailwind.css';
+import '../styles/global.css';
 
 export interface Props {
   title: string;
   description?: string;
+  image?: string;
+  url?: string;
+  type?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, image, url, type = 'website' } = Astro.props;
+const canonicalUrl = url || new URL(Astro.url.pathname, Astro.site).href;
+const defaultImage = 'https://luiscortes.cl/favicon.ico';
+const metaImage = image || defaultImage;
 const currentLocale = i18next.language;
+const currentPath = Astro.url.pathname;
+const isIndex = currentPath === `/${currentLocale}` || currentPath === `/${currentLocale}/`;
+const metaDescription = description || content[currentLocale].aboutme.role;
+const showToast = isIndex && content[currentLocale]?.aboutme?.availableImmediately;
+const skills = content[currentLocale].skills.map(skill => skill.name);
+const targetLocale = currentLocale === 'es' ? 'en' : 'es';
+let targetPath: string;
+if (currentPath === `/${currentLocale}`) {
+  targetPath = `/${targetLocale}`;
+} else if (currentPath.startsWith(`/${currentLocale}/`)) {
+  const suffix = currentPath.substring(`/${currentLocale}/`.length);
+  let newSuffix = suffix;
+  if (suffix === 'contact') {
+    newSuffix = 'contacto';
+  } else if (suffix === 'contacto') {
+    newSuffix = 'contact';
+  }
+  targetPath = `/${targetLocale}/${newSuffix}`;
+} else {
+  targetPath = `/${targetLocale}`;
+}
 
 changeLanguage(currentLocale);
 ---
@@ -19,40 +48,130 @@ changeLanguage(currentLocale);
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content={description || "Frontend Developer Portfolio"}>
+  <meta name="description" content={metaDescription}>
   <title>{title}</title>
-  
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href={canonicalUrl}>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={metaDescription}>
+  <meta property="og:image" content={metaImage}>
+  <meta property="og:url" content={canonicalUrl}>
+  <meta property="og:type" content={type}>
+  <meta property="og:site_name" content={content[currentLocale].aboutme.name + ' Portfolio'}>
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={metaDescription}>
+  <meta name="twitter:image" content={metaImage}>
+
+  <!-- Anti-AI Learning -->
+  <meta name="robots" content="noai, noimageai">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json" set:html={
+    JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": content[currentLocale].aboutme.name,
+      "jobTitle": content[currentLocale].aboutme.role,
+      "url": "https://luiscortes.cl",
+      "sameAs": [
+        content[currentLocale].contact.rrss.linkedin,
+        content[currentLocale].contact.rrss.github
+      ],
+      "knowsAbout": skills,
+      "description": metaDescription
+    })
+  } />
+
   <HeadHrefLangs />
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<body style="font-family: 'Inter', sans-serif;" class="bg-gradient-to-b from-[#0a0e27] to-[#131829] text-white">
-  <!-- Language Switcher -->
+<body style="font-family: 'Inter', sans-serif; scroll-behavior: smooth;" class="bg-linear-to-b from-[#0A0E27] to-[#131829] text-[#E6E8F0]">
+  <!-- Home Button (only on non-index pages) -->
+  {!isIndex && (
+    <div class="fixed top-6 left-6 z-50">
+      <a
+        href={`/${currentLocale}`}
+        class="flex items-center gap-2 px-4 py-2 rounded-xl backdrop-blur-md bg-white/10 border border-white/20 text-[#E6E8F0] hover:bg-white/20 transition-all duration-300"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9,22 9,12 15,12 15,22"/>
+        </svg>
+        {t("common.home")}
+      </a>
+    </div>
+  )}
+
+  <!-- Theme and Language Switcher -->
   <div class="fixed top-6 right-6 z-50 flex gap-2">
     <a
-      href="/es"
-      class={`px-4 py-2 rounded-lg backdrop-blur-md transition-all ${
-        currentLocale === 'es'
-          ? 'bg-indigo-600/80 text-white'
-          : 'bg-white/5 text-gray-400 hover:bg-white/10'
-      }`}
+      href={targetPath}
+      class="group theme-button flex items-center justify-center gap-0 px-3 py-3 sm:justify-start sm:gap-2 sm:px-4 sm:py-2 rounded-xl backdrop-blur-md bg-white/10 border border-white/20 text-[#E6E8F0] hover:bg-white/20 transition-all duration-300 cursor-pointer"
     >
-      ES
-    </a>
-    <a
-      href="/en"
-      class={`px-4 py-2 rounded-lg backdrop-blur-md transition-all ${
-        currentLocale === 'en'
-          ? 'bg-indigo-600/80 text-white'
-          : 'bg-white/5 text-gray-400 hover:bg-white/10'
-      }`}
-    >
-      EN
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m15.075 18.95-.85 2.425q-.1.275-.35.45t-.55.175q-.5 0-.812-.413t-.113-.912l3.8-10.05q.125-.275.375-.45t.55-.175h.75q.3 0 .55.175t.375.45L22.6 20.7q.2.475-.1.888t-.8.412q-.325 0-.562-.175t-.363-.475l-.85-2.4zM9.05 13.975 4.7 18.3q-.275.275-.687.288T3.3 18.3q-.275-.275-.275-.7t.275-.7l4.35-4.35q-.875-.875-1.588-2T4.75 8h2.1q.5.975 1 1.7t1.2 1.45q.825-.825 1.713-2.313T12.1 6H2q-.425 0-.712-.288T1 5t.288-.712T2 4h6V3q0-.425.288-.712T9 2t.713.288T10 3v1h6q.425 0 .713.288T17 5t-.288.713T16 6h-1.9q-.525 1.8-1.575 3.7t-2.075 2.9l2.4 2.45-.75 2.05zM15.7 17.2h3.6l-1.8-5.1z"/></svg>
+      <span class="hidden group-hover:inline sm:inline transition-all duration-300 pl-2 md:pl-0">
+        {currentLocale === 'es' ? 'English' : 'Español'}
+      </span>
     </a>
   </div>
 
+  <!-- Availability Toast -->
+  {showToast && (
+    <a href="#contact" id="availability-toast" class="fixed top-6 left-1/2 transform -translate-x-1/2 z-40 bg-green-500 text-white px-6 py-3 text-lg text-center rounded-lg shadow-lg hover:bg-green-600 transition-colors cursor-pointer animate-slide-in">
+      {t("about.availableImmediately")}
+    </a>
+  )}
+
   <slot />
+
+  <script>
+    setInterval(() => {
+      const toast = document.getElementById('availability-toast');
+      if (toast) {
+        toast.classList.remove('animate-slide-in');
+        toast.classList.add('animate-shake');
+        setTimeout(() => {
+          toast.classList.remove('animate-shake');
+        }, 600);
+      }
+    }, 10000);
+  </script>
+
+  <!-- Scroll to Top Button -->
+  <button id="scroll-to-top" class="fixed bottom-4 right-4 z-50 bg-white/10 backdrop-blur-md border border-white/20 rounded-full p-3 text-[#E6E8F0] hover:bg-white/20 transition-all duration-300 opacity-100 pointer-events-auto cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18,15 12,9 6,15"></polyline>
+    </svg>
+  </button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const scrollButton = document.getElementById('scroll-to-top');
+      if (!scrollButton) return;
+      const toggleButton = () => {
+        if (window.scrollY > window.innerHeight) {
+          scrollButton.classList.remove('opacity-0', 'pointer-events-none');
+          scrollButton.classList.add('opacity-100', 'pointer-events-auto');
+        } else {
+          scrollButton.classList.remove('opacity-100', 'pointer-events-auto');
+          scrollButton.classList.add('opacity-0', 'pointer-events-none');
+        }
+      };
+      window.addEventListener('scroll', toggleButton);
+      toggleButton(); // initial check
+      scrollButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
 </body>
 </html>

@@ -1,0 +1,18 @@
+---
+import i18next, { changeLanguage } from "i18next";
+import Layout from '../../layouts/Layout.astro';
+import ContactComponent from '../../components/Contact.astro';
+import Footer from '../../components/Footer.astro';
+import { content } from '../../_data/content';
+
+const locale = 'en';
+changeLanguage(locale);
+
+const pageTitle = i18next.t('contact.title') + ' | ' + content[locale].aboutme.name + ' - ' + content[locale].aboutme.role;
+const pageDescription = i18next.t('contact.title') + ' | ' + content[locale].aboutme.name + ' - ' + content[locale].aboutme.role;
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<ContactComponent enhanced={true} />
+	<Footer />
+</Layout>

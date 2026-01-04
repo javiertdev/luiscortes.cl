@@ -1,9 +1,71 @@
 {
-  "welcome": {
-    "title": "Para comenzar, abre el directorio <code><pre>src/pages</pre></code> en tu proyecto.",
-    "docs": "Lee nuestra documentación",
-    "discord": "Únete a nuestro Discord",
-    "news_title": "¿Qué hay de nuevo en Astro 5.0?",
-    "news_desc": "Desde capas de contenido hasta islas de servidor, haz clic para aprender más sobre las nuevas funciones y mejoras en Astro 5.0"
-  }
+  "common": {
+    "home": "Ir al inicio",
+    "rrss": {
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "youtube": "YouTube",
+      "instagram": "Instagram"
+    },
+    "repo": {
+      "github": "Revisa el código de este proyecto en GitHub"
+    }
+  },
+  "hero": {
+    "downloadSummary": "Descargar Resumen",
+    "contact": "Contactar"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "availableImmediately": "Disponibilidad inmediata"
+  },
+  "skills": {
+    "title": "Habilidades técnicas"
+  },
+  "experience": {
+    "title": "Experiencia laboral"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "seeMore": "Ver más proyectos en GitHub"
+  },
+  "contact": {
+   "title": "Contacto",
+   "email": "Correo Electrónico",
+   "phone": "Teléfono",
+   "individual": "Soy persona natural",
+   "company": "Soy empresa",
+   "nameSurnames": "Nombre y apellidos",
+   "contactNumber": "Número de contacto",
+   "subject": "Asunto",
+   "message": "Mensaje",
+   "companyName": "Nombre de la empresa",
+   "companyWebsite": "Sitio web de la empresa",
+   "noWebsite": "Aún no tenemos",
+   "yourNameSurnames": "Tu nombre y apellidos",
+   "yourEmail": "Tu correo",
+   "yourContactNumber": "Tu número de contacto",
+   "send": "Enviar",
+   "back": "Volver",
+   "sendMessage": "Envíame un mensaje",
+   "subjectTooltip": "Escribe un asunto *claro y descriptivo*",
+   "messageTooltip": "Escribe un mensaje *detallado explicando tu consulta*,\n:-- complementa con enlaces si dispones.",
+   "alerts": {
+     "success": {
+       "title": "Mensaje enviado",
+       "message": "Tu mensaje ha sido enviado exitosamente."
+     },
+     "error": {
+       "title": "Error",
+       "message": "Hubo un error al enviar el mensaje."
+     },
+     "accept": "Aceptar",
+     "errors": {
+       "REQUIRED_FIELD": "El campo {field} es obligatorio",
+       "INVALID_EMAIL": "Formato de email inválido",
+       "INVALID_URL": "URL inválida",
+       "EMAIL_SEND_FAILED": "Error al enviar el mensaje. Inténtalo de nuevo."
+     }
+   }
+ }
 }
