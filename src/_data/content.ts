@@ -3,8 +3,8 @@ import type iContent from '../interfaces/core.interface';
 export const content: iContent = {
   es: {
     resume: {
-      url: "https://cdn.javiert.dev/cv.pdf",
-      filename: "CV - Luis Cortes.pdf"
+      url: "",
+      filename: ""
     },
     aboutme: {
       description: "Soy un profesional *dinámico* y *proactivo* especializado en el _desarrollo web_. Mi /orientación analítica/ me permite abordar desafíos de manera *meticulosa*. _Comprometido_ con la *ética* profesional, especialmente en la protección de datos y *seguridad informática*. Mi /enfoque/ es el de un *aprendiz constante*, buscando _en todo momento_ oportunidades para *mejorar* y mantenerme al tanto de las _últimas tendencias_ y _vulnerabilidades_.\nMi *sólida experiencia* en la _creación_ y mantenimiento de *soluciones tecnológicas integrales* refleja mi _compromiso_ con la *excelencia técnica*. _Siempre_ busco *superar expectativas*, *contribuir* al _éxito del equipo_ y asegurar la entrega de _resultados *excepcionales*_.",
@@ -22,11 +22,11 @@ export const content: iContent = {
       { name: "Sass", icon: "https://skillicons.dev/icons?i=sass", link: "https://sass-lang.com", color: "#22D3EE" },
       { name: "NodeJS", icon: "https://skillicons.dev/icons?i=nodejs", link: "https://nodejs.org/", color: "#6366F1" },
       { name: "BUN", icon: "https://skillicons.dev/icons?i=bun", link: "https://bun.sh/", color: "#22D3EE" },
-      { name: "PHP", icon: "https://skillicons.dev/icons?i=php", link: "https://www.php.net/", color: "#6366F1" },
-      { name: "Python", icon: "https://skillicons.dev/icons?i=python", link: "https://www.python.org/", color: "#22D3EE" },
-      { name: "Git", icon: "https://skillicons.dev/icons?i=git", link: "https://git-scm.com/", color: "#22D3EE" },
       { name: "NPM", icon: "https://skillicons.dev/icons?i=npm", link: "https://www.npmjs.com/", color: "#6366F1" },
       { name: "Figma", icon: "https://skillicons.dev/icons?i=figma", link: "https://www.figma.com/", color: "#6366F1" },
+      { name: "Git", icon: "https://skillicons.dev/icons?i=git", link: "https://git-scm.com/", color: "#22D3EE" },
+      { name: "PHP", icon: "https://skillicons.dev/icons?i=php", link: "https://www.php.net/", color: "#6366F1" },
+      { name: "Python", icon: "https://skillicons.dev/icons?i=python", link: "https://www.python.org/", color: "#22D3EE" },
       { name: "Java", icon: "https://skillicons.dev/icons?i=java", link: "https://www.java.com/", color: "#22D3EE" },
       { name: "SpringBoot", icon: "https://skillicons.dev/icons?i=spring", link: "https://spring.io/projects/spring-boot", color: "#22D3EE" },
     ],
@@ -49,7 +49,7 @@ export const content: iContent = {
       },
       {
         title: "jtAlium",
-        description: "La extensión de VSCode *perfecta* para _complementar_ tus desarrollos y facilitarte la vida con utilidades muy necesarias para /no perder la cordura/.",
+        description: "La extensión para *VSCode* que _transforma_ tu *experiencia de desarrollo*. Con _útilidades_ que *simplifican* tu /trabajo/ en los proyectos *robustos*.",
         logo: "https://s6.imgcdn.dev/YleQoN.png",
         repository: "https://github.com/javiertdev/jtAlium",
         icon: "https://skillicons.dev/icons?i=vscode",
@@ -94,7 +94,7 @@ export const content: iContent = {
               name: "Claro Chile",
               logo: "https://s6.imgcdn.dev/YleV2l.png"
             },
-            description: "Iniciamos un nuevo proyecto para el cliente Claro Chile en donde desarrollamos una plataforma que sacamos a producción y hoy en día se utiliza en los CallCenters y todas las sucursales de Chile, me integré en una etapa temprana por lo que tuve la oportunidad de ser parte de las definiciones técnicas del proyecto, además de establecer la arquitectura técnica y de diseño. El proyecto fue desarrollado en Angular 17, consumiendo Lambdas con API REST además de integrar un catálogo de productos utilizando Contentful CMS configurando este desde cero, complementando información con una base de datos Mongo, trabajando el versionamiento con Git y Gitlab en todo momento. Y también haciendo integraciones con Autentikar para validaciones faciales y Autentia para la huella digital. Sumado a esto, he diseñado en Figma el prototipo de una de las plataformas, en donde posteriormente desarrollé en Angular 20 en base a microfronts, además desarrollé una librería NPM interna para reutilizar componentes dentro de todos los microfronts.",
+            description: "Participé como arquitecto frontend desde fase inicial de plataforma omnicanal para Claro Chile, actualmente operativa en callcenters y sucursales a nivel nacional. Definí la arquitectura técnica y de diseño, estableciendo el stack tecnológico y patrones de desarrollo. Arquitecté una nueva solución frontend en Angular con arquitectura de microfrontends, desarrollando una librería NPM interna de componentes compartidos para escalar el desarrollo. Implementé una integración headless CMS con Contentful configurado desde cero, consumo de AWS Lambdas vía API REST, y base de datos MongoDB. Integré servicios de biometría (Autentikar para reconocimiento facial y Autentia para huella digital). Diseñé prototipo en Figma traducido posteriormente a código, asegurando consistencia entre diseño y desarrollo.",
             technologies: [
               { name: "Angular 17-20", icon: "https://skillicons.dev/icons?i=angular" },
               { name: "NodeJS", icon: "https://skillicons.dev/icons?i=nodejs" },
@@ -103,6 +103,7 @@ export const content: iContent = {
               { name: "MongoDB", icon: "https://skillicons.dev/icons?i=mongodb" },
               { name: "GIT", icon: "https://skillicons.dev/icons?i=git" },
               { name: "Gitlab", icon: "https://skillicons.dev/icons?i=gitlab" },
+              { name: "BitBucket", icon: "https://skillicons.dev/icons?i=bitbucket" },
               { name: "Figma", icon: "https://skillicons.dev/icons?i=figma" }
             ]
           }
@@ -116,12 +117,12 @@ export const content: iContent = {
         promotions: [
           {
             role: "Consultor",
-            period: "25/01/2024 • 23/02/2024",
+            period: "01/2024 • 02/2024",
             company: {
               name: "Correos Chile",
               logo: "https://s6.imgcdn.dev/YleWIV.png"
             },
-            description: "Durante el período de vacaciones de un desarrollador Backend, asumí sus responsabilidades, centrando mis esfuerzos en el desarrollo de microservicios utilizando NodeJS con Javascript y ExpressJS. Integré la API de Strapi CMS Headless, así como otras APIs internas de CorreosChile. En este proceso, me encargué de la configuración y resolución de diversas incidencias, gestionando eficientemente el versionamiento a través de GIT y Gitlab. Para validar los microservicios y APIs, utilicé Postman, garantizando la robustez y correcto funcionamiento de las implementaciones realizadas. Adicionalmente, me involucré en la administración de tareas mediante Jira, asegurando una coordinación efectiva en el equipo.",
+            description: "Asumí temporalmente desarrollo backend (por reemplazo) para Correos Chile, implementando microservicios en Node.js/Express integrados con Strapi Headless CMS y APIs internas corporativas. Diseñé y validé endpoints REST utilizando Postman, asegurando robustez y cumplimiento de especificaciones técnicas. Resolví incidencias críticas de producción y gestioné deployments mediante Git/GitLab. Coordiné trabajo con equipo mediante JIRA, garantizando continuidad operacional durante período de transición.",
             technologies: [
               { name: "NodeJS", icon: "https://skillicons.dev/icons?i=nodejs" },
               { name: "Javascript", icon: "https://skillicons.dev/icons?i=javascript" },
@@ -132,8 +133,8 @@ export const content: iContent = {
           },
           {
             role: "Bench Interno - Mentor Técnico",
-            period: "01/11/2023 • 27/02/2024",
-            description: "Durante mi periodo en el Bench de SII Group, tuve la oportunidad de desempeñar el rol de Mentor Técnico, brindando apoyo al equipo de Semillero. Aproveché esta etapa para compartir mis conocimientos sobre diversas tecnologías, fomentar buenas prácticas de programación, y destacar la importancia de la optimización, limpieza y documentación del código. Mi enfoque fue orientar al equipo hacia la excelencia técnica, impulsando su capacidad para tomar decisiones de liderazgo en sus proyectos. Esta experiencia no solo fortaleció mis habilidades de mentoría, sino que también contribuyó al crecimiento y desarrollo profesional de los miembros del Semillero.",
+            period: "11/2023 • 12/2023",
+            description: "Ejercí como Mentor Técnico para el programa Semillero, liderando capacitación técnica de desarrolladores junior en arquitectura de software, patrones de diseño y mejores prácticas de desarrollo. Implementé code reviews estructurados y sesiones de pair programming para acelerar curva de aprendizaje del equipo.",
             technologies: [
               { name: "NodeJS", icon: "https://skillicons.dev/icons?i=nodejs" },
               { name: "Javascript", icon: "https://skillicons.dev/icons?i=javascript" },
@@ -147,12 +148,12 @@ export const content: iContent = {
           },
           {
             role: "Consultor",
-            period: "01/02/2022 • 30/10/2023",
+            period: "02/2022 • 10/2023",
             company: {
               name: "Banco Santander Chile",
               logo: "https://s6.imgcdn.dev/YledBK.png"
             },
-            description: "Contribuí al desarrollo del nuevo botón de pago con millas Santander LATAM Pass para el Banco Santander. Desarrollé en Angular 12 las pantallas a partir de diseños en Invision, conectando servicios del BackEnd con API Rest. Realicé despliegues con pipelines para Jenkins, todo el versionamiento lo realicé con Git y Gitlab. Gestioné tareas e historias en JIRA y documentación en Confluence. Configuré una VPS desde terminal y cPanel, instalé Magento 2, y diseñé un Launcher con HTML/CSS/JS para utilizar el botón. Posteriormente, asumí nuevas responsabilidades al fusionarse dos células, trabajando en un portal adicional del Banco con Angular 13, Contentful, NodeJS, pruebas unitarias y corrección de detalles en APIGEE.",
+            description: "Desarrollé la solución de pago con millas LATAM Pass para Banco Santander, implementando el FrontEnd con Angular e integrando APIs REST. Configuré pipelines CI/CD en Jenkins y para los deployments automatizados a producción. Establecí entorno de pruebas configurando una VPS con Magento 2 para validación de integración del botón de pago. Posteriormente, contribuí al desarrollo de portal corporativo implementando una arquitectura headless CMS con Contentful y Node.js, aplicando testing unitario y optimizando integraciones APIGEE. Gestioné trabajo ágil con JIRA/Confluence y versionamiento con Git/GitLab.",
             technologies: [
               { name: "Angular 12-13", icon: "https://skillicons.dev/icons?i=angular" },
               { name: "HTML", icon: "https://skillicons.dev/icons?i=html" },
@@ -174,12 +175,12 @@ export const content: iContent = {
         promotions: [
           {
             role: "Desarrollador Full Stack",
-            period: "01/12/2020 • 31/12/2021",
+            period: "12/2020 • 12/2021",
             company: {
               name: "Isapre Colmena",
               logo: "https://s6.imgcdn.dev/Yleeln.png"
             },
-            description: "Participé en el Refactoring de un sistema antiguo basado en VisualBasic4. Después de dos meses, asumí el rol de Desarrollador Full Stack para colaborar en la migración hacia nuevas tecnologías. Implementé Angular 12 para el FrontEnd, Java & SpringBoot para el BackEnd utilizando la metodología API Rest, y Sybase para procedimientos almacenados en la base de datos mediante Embarcadero DBArtisan. Lideré el diseño en código del Sistema de Beneficiarios Ambulatorios, empleando Angular Material 9 con adaptaciones en Sass. Utilicé Git y GitLab para el control de versiones, y DagTools en una máquina virtual con Windows XP para revisar el código VisualBasic4 del sistema antiguo.",
+            description: "Participé en la modernización de un sistema legacy VisualBasic 4 hacia stack moderno con Angular y Spring Boot. Lideré el diseño y arquitectura front-end del módulo crítico de Beneficiarios Ambulatorios, estableciendo patrones de componentes reutilizables con Angular Material y Sass. Desarrollé funcionalidades full-stack implementando APIs REST en Java/Spring Boot integradas con procedimientos almacenados Sybase. Gestioné versionamiento con Git/GitLab y realicé ingeniería inversa del sistema legacy para garantizar migración completa de funcionalidades sin pérdida de datos.",
             technologies: [
               { name: "Angular 9 y 12", icon: "https://skillicons.dev/icons?i=angular" },
               { name: "Java", icon: "https://skillicons.dev/icons?i=java" },
@@ -199,12 +200,12 @@ export const content: iContent = {
         promotions: [
           {
             role: "Ingeniero Informático",
-            period: "18/12/2019 • 09/06/2020",
+            period: "12/2019 • 06/2020",
             company: {
               name: "Corporación Administrativa del Poder Judicial",
               logo: "https://s6.imgcdn.dev/YleZpM.png"
             },
-            description: "Contribuí al desarrollo del innovador portal del Poder Judicial de Chile, especializándome en la traducción de diseños visuales a código funcional HTML/CSS junto con Javascript y jQuery. Lideré la integración visual eficiente de estos elementos en PHP con CakePHP, priorizando el diseño adaptativo (Responsive) para una experiencia consistente en diversas pantallas. Superé desafíos de compatibilidad FrontEnd y materialice con éxito todas las propuestas creativas del Product Owner.",
+            description: "Desarrollé componentes front-end para el portal institucional del Poder Judicial de Chile, implementando interfaces responsive y accesibles según especificaciones de diseño. Lideré la integración de componentes visuales con arquitectura backend CakePHP, optimizando rendimiento y compatibilidad cross-browser. Resolví desafíos técnicos complejos de compatibilidad front-end y traduje requerimientos de producto en soluciones técnicas escalables, asegurando entrega consistente de funcionalidades según roadmap definido por el cliente.",
             technologies: [
               { name: "HTML", icon: "https://skillicons.dev/icons?i=html" },
               { name: "CSS", icon: "https://skillicons.dev/icons?i=css" },
@@ -224,16 +225,16 @@ export const content: iContent = {
         promotions: [
           {
             role: "Consultor Informático",
-            period: "30/04/2019 • 30/11/2022",
-            description: "Líder de un proyecto emprendedor junto a colegas del liceo, dedicado al ámbito informático. Nos especializamos en proporcionar servicios flexibles y económicos a pequeñas y medianas empresas, enfocándonos en el desarrollo de páginas web adaptadas a sus necesidades. Utilizo mis habilidades de liderazgo para dirigir el equipo y garantizar la calidad de los servicios. Nuestras tecnologías clave incluyen Angular o Svelte para el FrontEnd, PHP o NodeJS a través de API Rest para el BackEnd, MySQL para bases de datos, GitHub para control de versiones, Trello para la gestión de tareas y Confluence para la documentación. Además, implementamos diversas librerías y tecnologías según los requisitos de cada cliente, como Bootstrap, Material UI, jQuery, Javascript, hCaptcha, cURL y varias APIs del Gobierno Digital.",
+            period: "04/2019 • 11/2022",
+            description: "Cofundé y lideré técnicamente una empresa de desarrollo web para PyMEs, definiendo arquitectura de soluciones full-stack y estándares de desarrollo. Arquitecté aplicaciones con arquitectura de microservicios utilizando API REST, implementé pipelines CI/CD con GitHub, y establecí procesos ágiles con Trello y Confluence. Gestioné el ciclo completo de proyectos desde diseño de arquitectura hasta entrega, liderando equipo de desarrollo y asegurando calidad mediante code reviews. Implementé integraciones con APIs gubernamentales y servicios de terceros, optimizando bases de datos MySQL para alto rendimiento.",
             technologies: [
               { name: "Angular", icon: "https://skillicons.dev/icons?i=angular" },
-              { name: "Svelte", icon: "https://skillicons.dev/icons?i=svelte" },
+              { name: "React", icon: "https://skillicons.dev/icons?i=react" },
               { name: "PHP", icon: "https://skillicons.dev/icons?i=php" },
               { name: "NodeJS", icon: "https://skillicons.dev/icons?i=nodejs" },
               { name: "MySQL", icon: "https://skillicons.dev/icons?i=mysql" },
               { name: "Bootstrap", icon: "https://skillicons.dev/icons?i=bootstrap" },
-              { name: "Javascript", icon: "https://skillicons.dev/icons?i=javascript" },
+              { name: "Typescript", icon: "https://skillicons.dev/icons?i=ts" },
               { name: "jQuery", icon: "https://skillicons.dev/icons?i=javascript" },
               { name: "GIT", icon: "https://skillicons.dev/icons?i=git" },
               { name: "GitHub", icon: "https://skillicons.dev/icons?i=github" },
@@ -253,8 +254,8 @@ export const content: iContent = {
   },
   en: {
     resume: {
-      url: "https://cdn.javiert.dev/CV - Luis Cortés.en.pdf",
-      filename: "CV - Luis Cortés.en.pdf"
+      url: "",
+      filename: ""
     },
     aboutme: {
       description: "I am a *dynamic* and *proactive* professional specialized in _web development_. My /analytical orientation/ allows me to address challenges in a *meticulous* way. _Committed_ to *professional ethics*, especially in data protection and *computer security*. My /approach/ is that of a *constant learner*, always seeking opportunities to *improve* and stay up to date with the _latest trends_ and _vulnerabilities_.\nMy *solid experience* in the _creation_ and maintenance of *comprehensive technological solutions* reflects my _commitment_ to *technical excellence*. _Always_ I seek to *exceed expectations*, *contribute* to the _team's success_ and ensure the delivery of _exceptional *results*_.",
@@ -272,11 +273,11 @@ export const content: iContent = {
       { name: "Sass", icon: "https://skillicons.dev/icons?i=sass", link: "https://sass-lang.com", color: "#22D3EE" },
       { name: "NodeJS", icon: "https://skillicons.dev/icons?i=nodejs", link: "https://nodejs.org/", color: "#6366F1" },
       { name: "BUN", icon: "https://skillicons.dev/icons?i=bun", link: "https://bun.sh/", color: "#22D3EE" },
-      { name: "PHP", icon: "https://skillicons.dev/icons?i=php", link: "https://www.php.net/", color: "#6366F1" },
-      { name: "Python", icon: "https://skillicons.dev/icons?i=python", link: "https://www.python.org/", color: "#22D3EE" },
-      { name: "Git", icon: "https://skillicons.dev/icons?i=git", link: "https://git-scm.com/", color: "#22D3EE" },
       { name: "NPM", icon: "https://skillicons.dev/icons?i=npm", link: "https://www.npmjs.com/", color: "#6366F1" },
       { name: "Figma", icon: "https://skillicons.dev/icons?i=figma", link: "https://www.figma.com/", color: "#6366F1" },
+      { name: "Git", icon: "https://skillicons.dev/icons?i=git", link: "https://git-scm.com/", color: "#22D3EE" },
+      { name: "PHP", icon: "https://skillicons.dev/icons?i=php", link: "https://www.php.net/", color: "#6366F1" },
+      { name: "Python", icon: "https://skillicons.dev/icons?i=python", link: "https://www.python.org/", color: "#22D3EE" },
       { name: "Java", icon: "https://skillicons.dev/icons?i=java", link: "https://www.java.com/", color: "#22D3EE" },
       { name: "SpringBoot", icon: "https://skillicons.dev/icons?i=spring", link: "https://spring.io/projects/spring-boot", color: "#22D3EE" }
     ],
@@ -299,7 +300,7 @@ export const content: iContent = {
       },
       {
         title: "jtAlium",
-        description: "The *perfect* VSCode extension to _complement_ your developments and make your life easier with very necessary utilities for /not losing sanity/.",
+        description: "The extension for *VSCode* that _transforms_ your *development experience*. With _utilities_ that *simplify* your /work/ in *robust* projects.",
         logo: "https://s6.imgcdn.dev/YleQoN.png",
         repository: "https://github.com/javiertdev/jtAlium",
         icon: "https://skillicons.dev/icons?i=vscode",
@@ -344,7 +345,7 @@ export const content: iContent = {
               name: "Claro Chile",
               logo: "https://s6.imgcdn.dev/YleV2l.png"
             },
-            description: "We started a new project for the client Claro Chile where we developed a platform that we launched into production and is currently used in Call Centers and all branches of Chile. I joined at an early stage, so I had the opportunity to be part of the project's technical definitions, in addition to establishing the technical and design architecture. The project was developed in Angular 17, consuming Lambdas with REST API in addition to integrating a product catalog using Contentful CMS configuring it from scratch, complementing information with a Mongo database, working versioning with Git and Gitlab at all times. And also making integrations with Autentikar for facial validations and Autentia for digital fingerprint. In addition, I designed in Figma the prototype of one of the platforms, where I later developed in Angular 20 based on microfronts, in addition I developed an internal NPM library to reuse components within all microfronts.",
+            description: "I participated as a frontend architect from the initial phase of the omnichannel platform for Claro Chile, currently operational in call centers and branches nationwide. I defined the technical and design architecture, establishing the technological stack and development patterns. I architected a new frontend solution in Angular with microfrontends architecture, developing an internal NPM library of shared components to scale development. I implemented a headless CMS integration with Contentful configured from scratch, consumption of AWS Lambdas via REST API, and MongoDB database. I integrated biometric services (Autentikar for facial recognition and Autentia for digital fingerprint). I designed the prototype in Figma subsequently translated to code, ensuring consistency between design and development.",
             technologies: [
               { name: "Angular 17-20", icon: "https://skillicons.dev/icons?i=angular" },
               { name: "NodeJS", icon: "https://skillicons.dev/icons?i=nodejs" },
@@ -371,7 +372,7 @@ export const content: iContent = {
               name: "Correos Chile",
               logo: "https://s6.imgcdn.dev/YleWIV.png"
             },
-            description: "During the vacation period of a Backend developer, I assumed their responsibilities, focusing my efforts on the development of microservices using NodeJS with Javascript and ExpressJS. I integrated the Strapi CMS Headless API, as well as other internal APIs from CorreosChile. In this process, I was in charge of the configuration and resolution of various incidents, efficiently managing versioning through GIT and Gitlab. To validate the microservices and APIs, I used Postman, guaranteeing the robustness and correct functioning of the implemented solutions. Additionally, I was involved in task management through Jira, ensuring effective coordination in the team.",
+            description: "I temporarily assumed backend development (as a replacement) for Correos Chile, implementing microservices in Node.js/Express integrated with Strapi Headless CMS and internal corporate APIs. I designed and validated REST endpoints using Postman, ensuring robustness and compliance with technical specifications. I resolved critical production incidents and managed deployments through Git/GitLab. I coordinated work with the team through JIRA, ensuring operational continuity during the transition period.",
             technologies: [
               { name: "NodeJS", icon: "https://skillicons.dev/icons?i=nodejs" },
               { name: "Javascript", icon: "https://skillicons.dev/icons?i=javascript" },
@@ -383,7 +384,7 @@ export const content: iContent = {
           {
             role: "Internal Bench - Technical Mentor",
             period: "01/11/2023 • 27/02/2024",
-            description: "During my period in the SII Group Bench, I had the opportunity to perform the role of Technical Mentor, providing support to the Seedling team. I took advantage of this stage to share my knowledge about various technologies, promote good programming practices, and highlight the importance of code optimization, cleanliness and documentation. My focus was to guide the team towards technical excellence, boosting their ability to make leadership decisions in their projects. This experience not only strengthened my mentoring skills, but also contributed to the professional growth and development of the Seedling members.",
+            description: "I served as Technical Mentor for the Seedling program, leading technical training of junior developers in software architecture, design patterns, and best development practices. I implemented structured code reviews and pair programming sessions to accelerate the team's learning curve.",
             technologies: [
               { name: "NodeJS", icon: "https://skillicons.dev/icons?i=nodejs" },
               { name: "Javascript", icon: "https://skillicons.dev/icons?i=javascript" },
@@ -402,7 +403,7 @@ export const content: iContent = {
               name: "Banco Santander Chile",
               logo: "https://s6.imgcdn.dev/YledBK.png"
             },
-            description: "I contributed to the development of the new payment button with Santander LATAM Pass miles for Banco Santander. I developed the screens in Angular 12 from designs in Invision, connecting BackEnd services with Rest API. I performed deployments with Jenkins pipelines, all versioning was done with Git and Gitlab. I managed tasks and stories in JIRA and documentation in Confluence. I configured a VPS from terminal and cPanel, installed Magento 2, and designed a Launcher with HTML/CSS/JS to use the button. Subsequently, I assumed new responsibilities when two cells merged, working on an additional Bank portal with Angular 13, Contentful, NodeJS, unit tests and detail corrections in APIGEE.",
+            description: "I developed the payment solution with LATAM Pass miles for Banco Santander, implementing the FrontEnd with Angular and integrating REST APIs. I configured CI/CD pipelines in Jenkins and for automated deployments to production. I established a testing environment by configuring a VPS with Magento 2 for validation of the payment button integration. Subsequently, I contributed to the development of the corporate portal implementing a headless CMS architecture with Contentful and Node.js, applying unit testing and optimizing APIGEE integrations. I managed agile work with JIRA/Confluence and versioning with Git/GitLab.",
             technologies: [
               { name: "Angular 12-13", icon: "https://skillicons.dev/icons?i=angular" },
               { name: "HTML", icon: "https://skillicons.dev/icons?i=html" },
@@ -429,7 +430,7 @@ export const content: iContent = {
               name: "Isapre Colmena",
               logo: "https://s6.imgcdn.dev/Yleeln.png"
             },
-            description: "I joined as a FrontEnd Developer at Colmena, participating in the Refactoring of an old system based on VisualBasic4. After two months, I assumed the role of Full Stack Developer to collaborate in the migration to new technologies. I implemented Angular 12 for the FrontEnd, Java & SpringBoot for the BackEnd using the REST API methodology, and Sybase for stored procedures in the database through Embarcadero DBArtisan. I led the code design of the Ambulatory Beneficiaries System, using Angular Material 9 with Sass adaptations. I used Git and GitLab for version control, and DagTools on a Windows XP virtual machine to review the old system's VisualBasic4 code.",
+            description: "I participated in the modernization of a legacy VisualBasic 4 system towards a modern stack with Angular and Spring Boot. I led the design and front-end architecture of the critical Ambulatory Beneficiaries module, establishing reusable component patterns with Angular Material and Sass. I developed full-stack functionalities implementing REST APIs in Java/Spring Boot integrated with Sybase stored procedures. I managed versioning with Git/GitLab and performed reverse engineering of the legacy system to ensure complete migration of functionalities without data loss.",
             technologies: [
               { name: "Angular 9 and 12", icon: "https://skillicons.dev/icons?i=angular" },
               { name: "Java", icon: "https://skillicons.dev/icons?i=java" },
@@ -454,7 +455,7 @@ export const content: iContent = {
               name: "Corporación Administrativa del Poder Judicial",
               logo: "https://s6.imgcdn.dev/YleZpM.png"
             },
-            description: "I contributed to the development of the innovative portal of the Judicial Power of Chile, specializing in the translation of visual designs to functional HTML/CSS code along with Javascript and jQuery. I led the efficient visual integration of these elements in PHP with CakePHP, prioritizing responsive design for a consistent experience across various screens. I overcame FrontEnd compatibility challenges and successfully materialized all the Product Owner's creative proposals.",
+            description: "I developed front-end components for the institutional portal of the Judicial Power of Chile, implementing responsive and accessible interfaces according to design specifications. I led the integration of visual components with CakePHP backend architecture, optimizing performance and cross-browser compatibility. I resolved complex technical challenges of front-end compatibility and translated product requirements into scalable technical solutions, ensuring consistent delivery of functionalities according to the client's defined roadmap.",
             technologies: [
               { name: "HTML", icon: "https://skillicons.dev/icons?i=html" },
               { name: "CSS", icon: "https://skillicons.dev/icons?i=css" },
@@ -475,7 +476,7 @@ export const content: iContent = {
           {
             role: "Computer Consultant",
             period: "30/04/2019 • 30/11/2022",
-            description: "Leader of an entrepreneurial project together with colleagues from high school, dedicated to the computer field. We specialize in providing flexible and economical services to small and medium-sized enterprises, focusing on the development of websites adapted to their needs. I use my leadership skills to direct the team and ensure service quality. Our key technologies include Angular or Svelte for the FrontEnd, PHP or NodeJS through Rest API for the BackEnd, MySQL for databases, GitHub for version control, Trello for task management and Confluence for documentation. In addition, we implement various libraries and technologies according to each client's requirements, such as Bootstrap, Material UI, jQuery, Javascript, hCaptcha, cURL and various Government Digital APIs.",
+            description: "I co-founded and led technically a web development company for SMEs, defining full-stack solution architecture and development standards. I architected applications with microservices architecture using REST APIs, implemented CI/CD pipelines with GitHub, and established agile processes with Trello and Confluence. I managed the complete project cycle from architecture design to delivery, leading the development team and ensuring quality through code reviews. I implemented integrations with governmental APIs and third-party services, optimizing MySQL databases for high performance.",
             technologies: [
               { name: "Angular", icon: "https://skillicons.dev/icons?i=angular" },
               { name: "Svelte", icon: "https://skillicons.dev/icons?i=svelte" },
