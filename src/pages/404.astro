@@ -1,0 +1,20 @@
+---
+import { changeLanguage } from "i18next";
+import { t } from "i18next";
+import Layout from '../layouts/Layout.astro';
+import NotFound from '../components/NotFound.astro';
+
+// Detect locale from URL
+const url = new URL(Astro.request.url);
+const pathSegments = url.pathname.split('/').filter(Boolean);
+const locale = pathSegments[0] === 'en' ? 'en' : 'es'; // default to es
+
+changeLanguage(locale);
+
+const pageTitle = `404 - ${t("404.message")}`;
+const pageDescription = t("404.description");
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<NotFound />
+</Layout>

@@ -17,7 +17,7 @@
   },
   "about": {
     "title": "Sobre Mí",
-    "availableImmediately": "Disponibilidad inmediata"
+    "availableImmediately": "Disponibilidad *inmediata*"
   },
   "skills": {
     "title": "Habilidades técnicas"
@@ -48,16 +48,16 @@
    "send": "Enviar",
    "back": "Volver",
    "sendMessage": "Envíame un mensaje",
-   "subjectTooltip": "Escribe un asunto *claro y descriptivo*",
-   "messageTooltip": "Escribe un mensaje *detallado explicando tu consulta*,\n:-- complementa con enlaces si dispones.",
+   "subjectTooltip": "Sugiero usar un asunto _breve_, *claro* y *descriptivo*\nNo te preocupes si no lo logras, puedes ampliar en el mensaje de abajo.",
+   "messageTooltip": "Escribe un mensaje *detallado explicando tu consulta*,\n:-- complementa con enlaces si dispones.\n:-- Si no te alcanza el mensaje, acorta una parte y hazme saber de que no lograste completar la idea, te contactaré lo antes posible.",
    "alerts": {
      "success": {
-       "title": "Mensaje enviado",
-       "message": "Tu mensaje ha sido enviado exitosamente."
+       "title": "¡Maravilloso!",
+       "message": "¡El mensaje se ha enviado con *total éxito*!\nIntentaré responder lo antes posible, muy probablemente en menos de 24 horas."
      },
      "error": {
-       "title": "Error",
-       "message": "Hubo un error al enviar el mensaje."
+       "title": "¡Chanfle!",
+       "message": "Hubo un error al enviar el mensaje.\nPor favor, vuelve a intentar. Si el error persiste, considera contactarme vía LinkedIn."
      },
      "accept": "Aceptar",
      "errors": {
@@ -67,5 +67,15 @@
        "EMAIL_SEND_FAILED": "Error al enviar el mensaje. Inténtalo de nuevo."
      }
    }
+ },
+ "404": {
+   "title": "404",
+   "message": "Página no encontrada",
+   "description_1": "Creo que esto nunca existió... 😶‍🌫️",
+   "description_2": "Esto antes, era puro campo... 🤠",
+   "description_3": "No lo sé, creo que alucinamos con esta página... 👽",
+   "description_4": "No recuerdo haber visto algo aquí... 🤔",
+   "description_5": "Quizá lo programé, pero no lo subí 🫣",
+   "description_6": "¡Yo había dejado mi jugo aquí! ¿Lo tomaste tú? 🤨"
  }
 }

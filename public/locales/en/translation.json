@@ -17,7 +17,7 @@
   },
   "about": {
     "title": "About Me",
-    "availableImmediately": "Immediate Availability"
+    "availableImmediately": "*Immediate* Availability"
   },
   "skills": {
     "title": "Technical Skills"
@@ -48,16 +48,16 @@
    "send": "Send",
    "back": "Back",
    "sendMessage": "Send me a message",
-   "subjectTooltip": "Write a *clear and descriptive* subject",
-   "messageTooltip": "Write a *detailed message explaining your query*,\n:-- complement with links if available.",
+   "subjectTooltip": "I suggest using a _brief_, *clear* and *descriptive* subject\nDon't worry if you don't get it right, you can expand in the message below.",
+   "messageTooltip": "Write a *detailed message explaining your query*,\n:-- complement with links if available.\n:-- If the message isn't enough, shorten a part and let me know what you couldn't complete the idea of, I'll contact you as soon as possible.",
    "alerts": {
      "success": {
-       "title": "Message sent",
-       "message": "Your message has been sent successfully."
+       "title": "Wonderful!",
+       "message": "The message has been sent with *total success*!\nI'll try to respond as soon as possible, very likely in less than 24 hours."
      },
      "error": {
-       "title": "Error",
-       "message": "There was an error sending the message."
+       "title": "Oops!",
+       "message": "There was an error sending the message.\nPlease try again. If the error persists, consider contacting me via LinkedIn."
      },
      "accept": "Accept",
      "errors": {
@@ -67,5 +67,15 @@
        "EMAIL_SEND_FAILED": "Failed to send email. Please try again."
      }
    }
+ },
+ "404": {
+   "title": "404",
+   "message": "Page Not Found",
+   "description_1": "I think this never existed... 😶‍🌫️",
+   "description_2": "This used to be just fields... 🤠",
+   "description_3": "I don't know, I think we hallucinated this page... 👽",
+   "description_4": "I don't remember seeing anything here... 🤔",
+   "description_5": "Maybe I programmed it, but didn't upload it 🫣",
+   "description_6": "I had left my juice here! Did you take it? 🤨"
  }
 }
