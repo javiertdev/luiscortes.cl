@@ -2,8 +2,8 @@
 
 En este repositorio está todo el desarrollo detrás de la web [LuisCortes.cl](https://luiscortes.cl). El objetivo de este proyecto es disponer a los reclutadores un resumen de mis habilidades, experiencia laboral, proyectos en los que trabajo.
 
-> Si bien está desarrollé este proyecto pensado en mi perfil e información, puedes reutilizarlo para tu perfil, y modificarlo a tu gusto.
-> Es cosa de modificar el archivo `content.ts` con tu información.
+> Si bien desarrollé este proyecto pensado en mi perfil e información, puedes reutilizarlo para tu perfil, y modificarlo a tu gusto.
+> Es cosa de cambiar la información en el archivo `src/_data/content.ts`, antes de eso, lee el documento completo.
 
 ## Stack Tecnológico
 
@@ -28,7 +28,7 @@ En este repositorio está todo el desarrollo detrás de la web [LuisCortes.cl](h
    <img src="https://skillicons.dev/icons?i=github" />
  </a>
  <a href="https://npmjs.com/@javiert.dev/yxtus">
-   <img src="https://s6.imgcdn.dev/Yle5CL.png" width="48" height="48" />
+   <img src="https://s6.imgcdn.dev/Yle5CL.png" width="48" height="48" style="border-radius: 16px" />
  </a>
 </p>
 
